@@ -1,0 +1,666 @@
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #00AEEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.container {
+    text-align: center;
+    color: white;
+    width: 520px;
+    padding:100px 20px;
+}
+
+.username{
+    font-weight: 600;
+}
+.menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #7B7B7B;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+}
+.logo {
+    margin-bottom: 20px;
+}
+.logo img {
+    width: 400px;
+}
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.welcome {
+    font-size: 1.5rem;
+    margin: 50px 0;
+}
+.update-section,
+.notifications-section,
+.view-section,
+.share-section {
+    margin: 10px 0;
+}
+.section {
+    background: white;
+    color: black;
+
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section span {
+    font-size: 1rem;
+}
+.button {
+    background-color: #8cc63f;
+    color: white;
+    border: none;
+    padding: 30px 20px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+
+    font-weight: 600;
+}
+.share-button {
+    background-color: #8cc63f;
+    color: white;
+    border: none;
+    padding: 20px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 50%;
+   
+}
+.share-btn{
+    border-radius: 12px;
+}
+.last-update-date {
+display: flex;
+flex-direction: column;
+border-radius: 12px;
+}
+
+.last-update-date span.date {
+font-weight: 600;
+font-size: 32px !important;
+margin-top: 10px;
+}
+
+.view-refistration{
+width: 100%;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 0 2px black;
+}
+
+.share-section {
+background-color: white;
+display: flex;
+border-radius: 12px;
+box-shadow: 0 0 2px black;
+}
+
+.share-btn-2{
+background-color: transparent;
+color: #8cc63f;
+}
+
+.update-section.section > div {
+width: 50%;
+}
+
+.notifications-section.section > div {
+width: 50%;
+}
+
+.menu img {
+width: 18px;
+}
+.menu {
+color: #2fa0d0;
+font-size: 16px;
+letter-spacing: 2px;
+}
+
+.notifications-section.section img {
+width: 26px;
+}
+
+
+.notifications-section.section button.button {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 0 15px;
+}
+
+
+/* hp-2 page styling start here */
+body.hp-2 .button {
+    padding: 12px 30px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+
+
+body.hp-2  .section {
+    padding: 15px 0;
+    border-radius:15px ;
+}
+
+body.hp-2  .section span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+body.hp-2 .view-refistration {
+    width: 100% ;
+    padding: 20px 0;
+    border-radius: 30px;
+}
+
+body.hp-2  .share-section{
+    border-radius: 30px;
+}
+
+body.hp-2 .share-button {
+    padding: 10px 0;
+}
+
+body.hp-2 .share-btn {
+    border-radius: 30px;
+}
+/* hp-2 page styling End here */
+
+/* hp-3 page styling start here */
+
+
+body.hp-3 .share-section img {
+    width: 75%;
+}
+
+body.hp-3 .share-btn {
+    border-radius: 15px;
+}
+
+body.hp-3 .share-section {
+    border-radius: 15px;
+}
+/* hp-3 page styling End here */
+
+
+/* Notifaction Page Start Here */
+  /* Icons */
+  .icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    fill: currentcolor;
+}
+
+
+
+
+/* 1. Ensure this sits above everything when visible */
+.modal {
+    position: absolute;
+    z-index: 10000;
+    /* 1 */
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.modal.is-visible {
+    visibility: visible;
+}
+
+.modal-overlay {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 0%, 0%, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.3s, opacity 0.3s;
+}
+
+.modal.is-visible .modal-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.modal-wrapper {
+    position: absolute;
+    z-index: 9999;
+    top: 6em;
+    left: 50%;
+    width: 32em;
+    margin-left: -16em;
+    background-color: #fff;
+    box-shadow: 0 0 1.5em hsla(0, 0%, 0%, 0.35);
+}
+
+.modal-transition {
+    transition: all 0.3s 0.12s;
+    transform: translateY(-10%);
+    opacity: 0;
+}
+
+.modal.is-visible .modal-transition {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-header,
+.modal-content {
+    padding: 1em;
+}
+
+.modal-header {
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.06);
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    color: #aaa;
+    background: none;
+    border: 0;
+}
+
+.modal-close:hover {
+    color: #777;
+}
+
+.modal-heading {
+    font-size: 1.125em;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.modal-content>*:first-child {
+    margin-top: 0;
+}
+
+.modal-content>*:last-child {
+    margin-bottom: 0;
+}
+.notifacation-panel {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    color: black;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 35px;
+    border-radius: 20px;
+    background: #eeeced;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border: 1px solid #b6b7b9;
+}
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #8cc63f;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #8cc63f;
+    cursor: pointer;
+  }
+
+  .range-slider-data {
+    color: #414242;
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+  
+    margin: 10px auto;
+    font-weight: 600;
+}
+
+
+.notifiaction .welcome {
+    text-align: left;
+    font-size: 32px;
+}
+
+.close-icon {
+    position: absolute;
+    right: 20px;
+  
+}
+
+.close-icon {
+    background-color: #eeeced;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.notifacation-panel h2 {
+    color: #28a9e0;
+    font-size: 1.6rem;
+    text-align: justify;
+    margin: 50px 0;
+}
+
+
+
+.second-range-slider h3 {
+    color: #414242;
+    text-align: left;
+    width: 95%;
+    margin-left: auto;
+    font-size: 16px;
+}
+
+span.days {
+    font-weight: 500;
+}
+
+.second-range-slider {
+    margin-top: 100px;
+    margin-bottom: 120px;
+}
+/* Notification Page End Here  */
+
+
+/* Registration page styling Start Here */
+.last-updated {
+ 
+    color: white;
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.edit-button {
+    background-color: #00AEEF;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #00AEEF;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.form-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.button-container a {
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 46%;
+    text-align: center;
+}
+.forms {
+    position: relative;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    padding-top: 80px;
+}
+
+.forms input {
+    border: none;
+    border-bottom: 1px solid #00AEEF;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.forms label {
+    text-align:left;
+}
+
+.button-container a {
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 30px 0;
+    font-size: 34px;
+}
+
+span.pdf-sm {
+    font-size: 18px;
+}
+
+button.edit-button:hover{
+background-color: #8cc63f;
+}
+
+.button-container a:hover{
+    background-color: #8cc63f;
+}
+/* Registration page styling End Here */
+
+
+/* Setting page styling start here */
+.account, .settings {
+    margin-bottom: 20px;
+}
+.account-item, .setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.account-item img, .setting-item img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.account-item p, .setting-item p {
+    margin: 0;
+    font-size: 14px;
+}
+.account-item p.name {
+    font-weight: bold;
+}
+.setting-item span {
+    font-size: 14px;
+    color: #999;
+}
+
+
+.setting h2{
+    margin-bottom: 10px;
+}
+
+.account-item img {
+width: 60px;
+}
+
+.user-profile-account {
+    display: flex;
+    align-items: center;
+}
+
+p.description {
+    color: #7b7b7b;
+    padding-top: 5px;
+    font-size: 12px;
+}
+.account_s .icon {
+    background-color: #eeeced;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+margin-left: 15px;
+    position: relative;
+}
+
+.account_s svg {
+    width: 30px;
+    height: 30px;
+  
+    position: absolute;
+    left: 3px;
+    top: 5px;
+}
+
+.settings p {
+    color: #404241;
+    font-size: 16px;
+    font-weight: 600;
+}
+.settings h2 {
+    margin-bottom: 10px;
+}
+
+.setting-item , .account-item{
+    padding-left: 30px;
+}
+/* Setting page styling start here */
+
+
+/* inside vault page styling Start Here */
+.logos img {
+    width: 300px;
+    padding-bottom: 50px;
+}
+
+.inside-vault{
+    background-color: #103142;
+}
+
+.button-container img {
+    width: 100px;
+}
+
+span.btn-last-update {
+    font-size: 18px;
+
+}
+
+.inside .share-section {
+    margin-top: 50px;
+}
+
+.inside-content {
+    color: white;
+    margin-top: 50px;
+}
+/* inside vault page styling End Here */
+@media only screen and (max-width: 600px) {
+
+    .setting-item , .account-item{
+        padding-left: 0;
+    }
+    .settings p {
+      
+        font-size: 14px;
+    }
+    .button-container a {
+        
+        font-size: 20px;
+    }
+.container {
+   
+    padding:100px 20px;
+}
+.logo img {
+width: 300px;
+}
+
+.button {
+
+font-size: 0.9rem;
+}
+
+.share-button{
+font-size: 0.9rem;
+}
+
+.section span {
+font-size: 0.8rem;
+}
+
+
+body.hp-2 .section span {
+    font-size: 0.8rem;
+ 
+}
+
+body.hp-2 .button{
+    width: 100%;
+}
+
+body.hp-2 .section{
+    padding: 15px 10px;
+}
+
+body.hp-2 .share-button {
+    font-size: 0.7rem;
+}
+
+}
