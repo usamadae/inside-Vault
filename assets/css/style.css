@@ -29,6 +29,17 @@ body {
     font-size: 1rem;
     color: white;
     cursor: pointer;
+    transition: 0.3s linear all;
+}
+
+.menu:hover {
+  
+    background: black;
+   
+}
+
+.insite-btn{
+    background-color: transparent;
 }
 .logo {
     margin-bottom: 20px;
@@ -71,12 +82,20 @@ body {
     border-radius: 12px;
     cursor: pointer;
     width: 100%;
-
+transition: 0.3s linear all;
     font-weight: 600;
 }
-.share-button {
-    background-color: #8cc63f;
+
+
+.button:hover {
+    background-color: black;
     color: white;
+ 
+}
+
+.share-button {
+   
+    color: #8cc63f;
     border: none;
     padding: 20px 30px;
     font-size: 1rem;
@@ -84,6 +103,12 @@ body {
     cursor: pointer;
     width: 50%;
    
+}
+
+.share-button.active  {
+    background-color: #8cc63f;
+    color: white;
+    
 }
 .share-btn{
     border-radius: 12px;
@@ -117,7 +142,16 @@ box-shadow: 0 0 2px black;
 .share-btn-2{
 background-color: transparent;
 color: #8cc63f;
+border-radius: 12px;
 }
+
+body.hp-2 .section span img{
+    transition: 0.3s linear all;
+}
+body.hp-2 .section span img:hover{
+    transform: scale(1.5);
+}
+
 
 .update-section.section > div {
 width: 50%;
@@ -192,8 +226,14 @@ body.hp-2 .share-btn {
 
 body.hp-3 .share-section img {
     width: 75%;
+
 }
 
+
+body.hp-3 .share-button.active img {
+ 
+    filter: brightness(0) invert(1);
+}
 body.hp-3 .share-btn {
     border-radius: 15px;
 }
@@ -214,7 +254,14 @@ body.hp-3 .share-section {
     fill: currentcolor;
 }
 
+.notifacation-panel .close-icon:hover {
+    background-color: #00aeef;
+}
 
+.notifacation-panel .close-icon:hover svg{
+
+  fill: white;
+}
 
 
 /* 1. Ensure this sits above everything when visible */
@@ -343,7 +390,13 @@ body.hp-3 .share-section {
     background: #8cc63f;
     cursor: pointer;
   }
-  
+
+  .slider::-webkit-slider-thumb:hover {
+    background: #00aeef;
+  }
+  .range-slider-data > div {
+    width: 25%;
+}
   .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
@@ -355,7 +408,7 @@ body.hp-3 .share-section {
   .range-slider-data {
     color: #414242;
     display: flex;
-    width: 85%;
+    width: 100%;
     justify-content: space-between;
   
     margin: 10px auto;
@@ -371,6 +424,7 @@ body.hp-3 .share-section {
 .close-icon {
     position: absolute;
     right: 20px;
+    transition: 0.3s linear all;
   
 }
 
@@ -462,6 +516,10 @@ span.days {
     width: 46%;
     text-align: center;
 }
+
+.button-container a:hover img{
+    filter: brightness(0) invert(1);
+}
 .forms {
     position: relative;
     background-color: white;
@@ -474,7 +532,7 @@ span.days {
     border: none;
     border-bottom: 1px solid #00AEEF;
     border-radius: 0;
-    padding: 0;
+    padding: 8px 0;
     margin: 0;
     width: 100%;
 }
@@ -500,6 +558,15 @@ background-color: #8cc63f;
 
 .button-container a:hover{
     background-color: #8cc63f;
+}
+
+input:focus-visible{
+
+    outline: none;
+}
+
+body.insidevault .share-btn-2{
+    border-radius: 30px;
 }
 /* Registration page styling End Here */
 
@@ -557,6 +624,7 @@ p.description {
     cursor: pointer;
 margin-left: 15px;
     position: relative;
+    transition: 0.3s linear all;
 }
 
 .account_s svg {
@@ -609,6 +677,16 @@ span.btn-last-update {
 .inside-content {
     color: white;
     margin-top: 50px;
+}
+
+
+.account_s .icon:hover{
+    background-color: #00aeef;
+}
+
+
+.account_s .icon:hover svg path{ 
+    fill:white;
 }
 /* inside vault page styling End Here */
 @media only screen and (max-width: 600px) {
