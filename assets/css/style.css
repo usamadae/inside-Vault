@@ -94,7 +94,7 @@ transition: 0.3s linear all;
 }
 
 .share-button {
-   
+   background-color: white;
     color: #8cc63f;
     border: none;
     padding: 20px 30px;
