@@ -379,6 +379,7 @@ body.hp-3 .share-section {
     -webkit-transition: .2s;
     transition: opacity .2s;
     border: 1px solid #b6b7b9;
+    padding: 0 20px;
 }
   
   .slider::-webkit-slider-thumb {
