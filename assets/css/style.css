@@ -396,7 +396,7 @@ body.hp-3 .share-section {
     background: #00aeef;
   }
   .range-slider-data > div {
-    width: 25%;
+    width: calc(25% - 30px);
 }
   .slider::-moz-range-thumb {
     width: 25px;
